@@ -1,0 +1,259 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Justinmind Prototyping Tool Login</title>
+
+    <meta name="description" content="Login to enjoy Justinmind Prototyping tool's online support platform: publish and share your prototypes, and have them validated and reviewed by project stakeholders.">
+    <meta name="keywords" content="prototyping tool, share prototypes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WV4WFMD');</script>
+    
+    
+    
+    	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    	<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    
+    
+    
+    <link rel="stylesheet" href="pages/css/normalize.min.css">
+    <link rel="stylesheet" href="pages/css/main.css?v=33">
+    <link rel="stylesheet" href="pages/css/login.css?v=33">
+    <link rel="stylesheet" href="pages/css/inputs.css?v=33">
+    <link rel="stylesheet" href="pages/css/jquery-usernote-min.css" type="text/css" media="screen" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <script type="text/javascript" src="pages/javascript/jquery-packages-usernote-min.js"></script>
+    <script type="text/javascript" src="pages/javascript/login.js?v=33"></script>
+    <script type="text/javascript" src="pages/javascript/select2.min.js"></script>
+    <script type="text/javascript" src="pages/javascript/inputs.js?v=33"></script>
+    <script src="pages/javascript/libs/modernizr-2.6.2.min.js"></script>
+    
+    
+    
+    
+    
+</head>
+
+
+        
+        
+    
+<body class="signin ">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV4WFMD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    
+	<div class="foreground">
+    	<div class="wrapper sky">
+    
+
+    
+    
+    <div id="top">
+        <div class="screen_padding">
+        
+        
+        	<div id="logo"><span class="logo-helper"></span><a class="logo_img" href="https://www.justinmind.com"></a>
+            
+                <a href="/" id="closeCross"><img src="images/widgets/cross-white@2x.png"/></a>
+            
+            </div>
+        
+        </div>
+    </div>
+        
+    <div id="container" class="clearfix">
+        
+        
+        
+        <div>
+             <div id="usernote-login" class="two-col-gr clearfix">
+             	
+             		<img src="images/widgets/rocket@2x.png" class="rocket" style="width:54px; height:1084px;" />
+             	
+             	
+                
+<div class="smallBox">
+	<div class="errorTop"></div>
+	<div>
+
+    	       
+        <h1 class="title">Sign In to your</h1>
+        <h2>JUSTINMIND ACCOUNT</h2>
+    
+    
+ 
+    <div class="col-left">  
+	    <input type="hidden" name="url" value="/prototypes/33228109/33228799/34417972/images/836ab8d6-5b81-4a18-91e7-be4b960a7904.png" id="url"/>
+	    <input type="hidden" name="struts.token.name" value="token" />
+<input type="hidden" name="token" value="OSCG8QRD0D0T7RI0GXCC03QXH7YJZ42K" />
+	    <div class="space">
+	    
+	    
+	    
+	        
+	        <input type="email" name="username" value=""  id="email" class="input-email adaptive"  placeholder="Email address"/>
+	        </div>
+	    
+    </div>
+    
+    <div class="passwordDiv">
+       <input type="password" name="password" id="password" class="input-pass adaptive" placeholder="Password"/>
+    </div> 
+    
+    <div class="submit-form marginTop10"> 
+    
+  	
+  		
+  		  
+        
+          <a class="floatRight textSmall" href="/usernote/newPass.action">Forgot password?</a>
+        
+      
+    	<div class="clear">
+        	<a class="button submit-button marginTop20" href="#">SIGN IN</a>
+        </div>
+    </div>
+    
+    
+    		       
+        	<p>Don't have an account? <a href="signUp.action">Sign Up!</a></p>
+    	
+    
+    
+     
+	</div>
+</div>
+
+<script type="text/javascript">
+
+var fieldErrors={};
+var actionErrors=[];
+  
+
+$(".button.submit-button").click(function() {
+   $(this).addClass("loading");
+   setTimeout(
+  	function() {
+  	$(".errorTop").hide();
+    $(".errorInput").removeClass('errorInput');
+    
+    var data = {
+        url: $("#usernote-login input[name='url']").val(),
+        username: $("#usernote-login #email").val(),
+        password: $("#usernote-login #password").val(),
+        rememberMe: $("#rememberMe").val(),
+        "struts.token.name": "token",
+        token: $("#usernote-login input[name='token']").val(),
+        "popup": false,
+        "onlyOwners": false,
+        "onlyAdmins": false
+        };
+        
+    var extraData = {};
+    if(typeof analyticsModel !== 'undefined' && analyticsModel !== null){
+      extraData = {
+                    clientId:           analyticsModel.get('clientId'),
+                    dataSource:         analyticsModel.get('dataSource'),
+                    referrer:           analyticsModel.get('referrer'),
+                    campaignName:       analyticsModel.get('campaignName'),
+                    campaignSource:     analyticsModel.get('campaignSource'),
+                    campaignMedium:     analyticsModel.get('campaignMedium'),
+                    campaignKeyword:    analyticsModel.get('campaignKeyword'),
+                    campaignContent:    analyticsModel.get('campaignContent'),
+                    campaignId:         analyticsModel.get('campaignId'),
+                    screenResolution:   analyticsModel.get('screenResolution'),
+                    viewportSize:       analyticsModel.get('viewportSize'),
+                    encoding:           analyticsModel.get('encoding'),
+                    screenColors:       analyticsModel.get('screenColors'),
+                    language:           analyticsModel.get('language')
+                };
+      data = $.extend(data, extraData);
+    }
+    
+    $(".button.submit-button").ajaxSubmit({
+        type: "POST",
+
+
+        url: '/usernote/doLogin.action',
+
+        dataType: "json",
+        data: data,
+        success: function(json, status, xhr) {
+        	$(".overlaySignIn").css("display", "none");
+			
+        	if(json && json.result && json.result==="success") {
+				if(window.parent){
+					window.parent.location.href=json.redirectTo + window.location.hash;
+				} else {
+					document.location.replace(json.redirectTo);	
+				}	
+			} else if(json && json.result && json.result==="multiple-account-access") {
+				 	$("#usernote-login > div").last().fadeOut(500, function() {
+    				$("#usernote-login > div").last().html($.parseJSON(xhr.responseText).content);	
+    				$("#usernote-login > div").last().fadeIn(500, function() {
+    					if($('#listUsers').scrollTop() == 0)
+    						$('#listUsers').animate({
+                    			scrollTop: $("#listUsers input:checked").parent().offset().top - $("#listUsers").offset().top - $("#listUsers input:checked").parent().outerHeight(true) - 10 
+                			}, 500);
+    				});
+  				});
+			} else {
+				showErrors(json.fieldErrors, json.actionErrors);
+				var tokenName=$("#usernote-login input[name='struts.token.name']").val();
+				$("input[name='"+ tokenName +"']").val(json.t);
+			}
+        },
+    	error: function (xhr, status, error) {
+    		$(".overlaySignIn").css("display", "none");
+    		$(".submit-button").removeClass("loading");
+			$(".errorTop").html("Unknown error!!").show('fast');
+    	}
+    });
+  }, 1000);
+});
+
+</script>		
+	
+
+            </div>
+        </div>
+        <div class="overlaySignIn"></div>
+    </div>
+    
+    </div></div>
+    	<div class="background">
+  			<div class="gradient-bg"></div>
+  			<div class="gradient-layer"></div>
+		</div>
+	
+	
+  <div id="popup" ></div>
+  
+  </body>
+
+</html>
