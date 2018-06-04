@@ -40,7 +40,7 @@ export default class WholeSaleStep1 extends Component {
                                 <RkText rkType="primary" style={{marginLeft: 10,}}>GO BACK</RkText>
                             </RkButton>
                             <RkButton
-                                onPress={() => this.props.navigation.navigate('WholeSale3')}
+                                onPress={() => this.props.navigation.navigate('WholeSale4')}
                                 style={{width : widthBtn, paddingLeft : 20, paddingRight: 20}}
                                 rkType="outline">
                                 <RkText rkType="primary" style={{marginRight: 10, fontSize: 12}}>CONTINUE TO STEP 4</RkText>

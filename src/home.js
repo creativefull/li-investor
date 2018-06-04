@@ -3,7 +3,8 @@ import SelectStrategy from "./screen/selectStrategy";
 import {
     WholeSale,
     WholeSale2,
-    WholeSale3
+    WholeSale3,
+    WholeSale4
 } from './screen/strategy'
 
 import {
@@ -25,8 +26,11 @@ export default createStackNavigator({
     },
     WholeSale3 : {
         screen : WholeSale3
+    },
+    WholeSale4 : {
+        screen : WholeSale4
     }
 }, {
     headerMode : 'none',
-    initialRouteName : 'Home'
+    initialRouteName : 'WholeSale4'
 })
