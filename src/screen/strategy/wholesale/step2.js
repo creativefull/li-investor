@@ -15,9 +15,23 @@ export default class WholeSaleStep1 extends Component {
       super(props)
     
       this.state = {
+          sellerName : ''
       };
     };
-    
+
+    onNext() {
+        const {sellerName} = this.state
+        const {params} = this.props.navigation.state
+        if (sellerName) {
+            this.props.navigation.navigate('WholeSale3', {
+                address : params.address,
+                sellerName : sellerName
+            })
+        } else {
+            alert('Seller Name Can\'t be empty')
+        }
+    }
+
   render() {
     return (
         <View style={{flex : 1 }}>
@@ -26,6 +40,8 @@ export default class WholeSaleStep1 extends Component {
                     <View rkCardContent>
                         <RkText style={{fontSize : 20, alignItems: 'center'}}>Seller Name</RkText>
                         <RkTextInput
+                            onChangeText={(sellerName) => this.setState({sellerName})}
+                            value={this.state.sellerName}
                             underlineColorAndroid="transparent"
                             style={styles.textInput}/>
 
@@ -38,7 +54,7 @@ export default class WholeSaleStep1 extends Component {
                                 <RkText rkType="primary" style={{marginLeft: 10,}}>LAST</RkText>
                             </RkButton>
                             <RkButton
-                                onPress={() => this.props.navigation.navigate('WholeSale3')}
+                                onPress={this.onNext.bind(this)}
                                 style={{width : widthBtn, paddingLeft : 20, paddingRight: 20}}
                                 rkType="outline">
                                 <RkText rkType="primary" style={{marginRight: 10, fontSize: 12}}>NEXT</RkText>

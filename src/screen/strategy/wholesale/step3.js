@@ -15,9 +15,24 @@ export default class WholeSaleStep1 extends Component {
       super(props)
     
       this.state = {
+          arv : ''
       };
     };
-    
+
+    onNext() {
+        const {arv} = this.state
+        const {params} = this.props.navigation.state
+        if (arv) {
+            this.props.navigation.navigate('WholeSale4', {
+                // address : params.address,
+                // sellerName : params.sellerName,
+                arv : arv
+            })
+        } else {
+            alert('ARV Name Can\'t be empty')
+        }
+    }
+
   render() {
     return (
         <View style={{flex : 1 }}>
@@ -27,6 +42,8 @@ export default class WholeSaleStep1 extends Component {
                         <RkText style={{fontSize : 20, alignItems: 'center'}}>QUICK MAO</RkText>
                         <RkText style={{fontSize : 20, alignItems: 'center'}}>Enter ARV</RkText>
                         <RkTextInput
+                            keyboardType='decimal-pad'
+                            onChangeText={(arv) => this.setState({arv})}
                             underlineColorAndroid="transparent"
                             style={styles.textInput}/>
                         <RkText small>Zillow Range ($75.00)</RkText>
@@ -40,7 +57,7 @@ export default class WholeSaleStep1 extends Component {
                                 <RkText rkType="primary" style={{marginLeft: 10,}}>GO BACK</RkText>
                             </RkButton>
                             <RkButton
-                                onPress={() => this.props.navigation.navigate('WholeSale4')}
+                                onPress={this.onNext.bind(this)}
                                 style={{width : widthBtn, paddingLeft : 20, paddingRight: 20}}
                                 rkType="outline">
                                 <RkText rkType="primary" style={{marginRight: 10, fontSize: 12}}>CONTINUE TO STEP 4</RkText>

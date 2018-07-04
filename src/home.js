@@ -32,5 +32,5 @@ export default createStackNavigator({
     }
 }, {
     headerMode : 'none',
-    initialRouteName : 'WholeSale4'
+    initialRouteName : 'WholeSale3'
 })
