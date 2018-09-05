@@ -21,6 +21,7 @@ export default class WholeSaleStep4 extends Component {
   render() {
       const {arv} = this.props.navigation.state.params
       let mao = (parseFloat(this.state.repeat) * parseFloat(arv)) - parseFloat(this.state.rehab_cost) - parseFloat(this.state.my_profit)
+      let recomended = mao - (mao * (7/100))
 
       return (
       <ScrollView style={{padding : 10}}>
@@ -52,7 +53,7 @@ export default class WholeSaleStep4 extends Component {
                 </View>
 
                 <RkText rkType="defaultText" style={{marginBottom : 20}}>{"MAO = $" + mao}</RkText>
-                <RkText rkType="defaultText">We recomended you start at $30,765</RkText>
+                <RkText rkType="defaultText">{"We recomended you start at $" + recomended}</RkText>
             </View>
         </RkCard>        
 
